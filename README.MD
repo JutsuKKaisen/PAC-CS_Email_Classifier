@@ -1,6 +1,6 @@
 # Email Thread Classifier
 
-A lightweight CLI tool for classifying email threads using bilingual (EN/VI) rule-based logic. Designed for operational use in the PCACS - Second Round Requirements (v1.2.0).
+A lightweight CLI tool for classifying email threads using bilingual (EN/VI) rule-based logic. Designed for operational use in the PCACS - Second Round Requirements.
 
 ## Features
 
@@ -104,10 +104,6 @@ requirements.txt
 .gitignore
 context.md
 ```
-
-## License
-
-MIT License (or specify your license).
 
 ---
 
