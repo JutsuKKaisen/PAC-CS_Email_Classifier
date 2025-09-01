@@ -16,6 +16,7 @@ Clone the repository and (optionally) create a virtual environment:
 
 ```sh
 git clone https://github.com/JutsuKKaisen/PAC-CS_Email_Classifier
+```
 
 ```sh
 cd PAC-CS_Email_Classifier
