@@ -15,7 +15,9 @@ A lightweight CLI tool for classifying email threads using bilingual (EN/VI) rul
 Clone the repository and (optionally) create a virtual environment:
 
 ```sh
-git clone <https://github.com/JutsuKKaisen/PAC-CS_Email_Classifier>
+git clone https://github.com/JutsuKKaisen/PAC-CS_Email_Classifier
+
+```sh
 cd PAC-CS_Email_Classifier
 python -m venv .venv
 source .venv/bin/activate  # On Windows: .venv\Scripts\activate
