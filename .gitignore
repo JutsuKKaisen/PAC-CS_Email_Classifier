@@ -40,7 +40,6 @@ coverage.xml
 *.hypothesis/
 .pytest_cache/
 tests/
-*.json
 
 # Jupyter Notebook
 .ipynb_checkpoints
