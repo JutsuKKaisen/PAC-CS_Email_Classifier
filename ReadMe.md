@@ -199,8 +199,8 @@ Menu:
     -   **Tone**: last message takes priority; fallback = last 3 messages.
         
     -   **Thread state**: `RESOLVED`, `FOLLOW-UP`, or `NEW`.
-        
 
+        For details on the rule logic, see [`email_classifier/rules.py`](email_classifier/rules.py).
 ----------
 
 ## 🏷️ Label Schemes
