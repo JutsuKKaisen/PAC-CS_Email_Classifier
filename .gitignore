@@ -6,48 +6,9 @@ __pycache__/
 # Virtual environments
 .venv/
 venv/
-ENV/
-env/
-env.bak/
-
-# Distribution / packaging
-build/
-develop-eggs/
-dist/
-downloads/
-eggs/
-.eggs/
-lib/
-lib64/
-parts/
-sdist/
-var/
-*.egg-info/
-.installed.cfg
-*.egg
 
 # Unit test / coverage reports
-htmlcov/
-.tox/
-.nox/
-.coverage
-.coverage.*
-.cache
-nosetests.xml
-coverage.xml
-*.cover
-*.py,cover
-*.hypothesis/
-.pytest_cache/
 tests/
-
-# Jupyter Notebook
-.ipynb_checkpoints
-
-# VSCode
-.vscode/
-.history/
-*.code-workspace
 
 # Mac / Linux / Windows system files
 .DS_Store
@@ -59,5 +20,5 @@ Thumbs.db
 # Project specific
 pred.json
 
-#context:
+# Context:
 context.md
