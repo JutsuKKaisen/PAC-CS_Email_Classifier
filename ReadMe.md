@@ -9,7 +9,7 @@ Designed for **PCACS - Second Round Requirements**.
 
 - **Input**: JSON containing `thread.subject` and `thread.messages`.
 - **Output**: JSON containing `thread_id` (SHA-1 hash) + `label` across multiple schemes.
-- **Bilingual**: Precompiled regex rules in English & Vietnamese.
+- **Bilingual**: Precompiled regex rules in English & Vietnamese.https://github.com/JutsuKKaisen/PAC-CS_Email_Classifier/blob/master/ReadMe.md
 - **O(n)** complexity: In-memory processing only.  
   No network calls. No ML dependencies.
 - **Two CLI modes**:  
@@ -63,7 +63,7 @@ Menu:
 
 ----------
 
-## 📄 Input/Output Example (from repository data)
+## 📄 Input/Output Example
 
 ### Input (`tests/thread.json`)
 
@@ -158,7 +158,7 @@ Menu:
 
 ----------
 
-## 🧠 How It Works (Flow Diagram)
+## 🧠 How It Works
 
 ```
 +---------------------+         +-------------------------+         +-------------------+
