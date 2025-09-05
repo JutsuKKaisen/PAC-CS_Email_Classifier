@@ -9,7 +9,7 @@ Designed for **PCACS - Second Round Requirements**.
 
 - **Input**: JSON containing `thread.subject` and `thread.messages`.
 - **Output**: JSON containing `thread_id` (SHA-1 hash) + `label` across multiple schemes.
-- **Bilingual**: Precompiled regex rules in English & Vietnamese.https://github.com/JutsuKKaisen/PAC-CS_Email_Classifier/blob/master/ReadMe.md
+- **Bilingual**: Precompiled regex rules in English & Vietnamese.https://github.com/JutsuKKaisen/PCA-CS_Email_Classifier/blob/master/ReadMe.md
 - **O(n)** complexity: In-memory processing only.  
   No network calls. No ML dependencies.
 - **Two CLI modes**:  
@@ -21,8 +21,8 @@ Designed for **PCACS - Second Round Requirements**.
 ## 📦 Installation
 
 ```sh
-git clone https://github.com/JutsuKKaisen/PAC-CS_Email_Classifier.git
-cd PAC-CS_Email_Classifier
+git clone https://github.com/JutsuKKaisen/PCA-CS_Email_Classifier.git
+cd PCA-CS_Email_Classifier
 python -m venv .venv
 source .venv/bin/activate      # Windows: .venv\Scripts\activate
 pip install -r requirements.txt
