@@ -17,8 +17,5 @@ Thumbs.db
 # Logs
 *.log
 
-# Project specific
-pred.json
-
 # Context:
 context.md

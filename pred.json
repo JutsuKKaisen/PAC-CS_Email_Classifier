@@ -1,0 +1,13 @@
+{
+  "thread_id": "5d1681cc8085f38fa6351b7f5ef3ca42dc8914e6",
+  "label": {
+    "request_type": "SCHEDULE/MEET",
+    "urgency": "URGENT-24H",
+    "thread_state": "FOLLOW-UP",
+    "scheduling": "PROPOSED_TIME",
+    "attachments": [
+      "ATTACHED"
+    ],
+    "tone": "POSITIVE"
+  }
+}
