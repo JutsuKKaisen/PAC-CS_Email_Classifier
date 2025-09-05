@@ -9,7 +9,7 @@ Designed for **PCACS - Second Round Requirements**.
 
 - **Input**: JSON containing `thread.subject` and `thread.messages`.
 - **Output**: JSON containing `thread_id` (SHA-1 hash) + `label` across multiple schemes.
-- **Bilingual**: Precompiled regex rules in English & Vietnamese.
+- **Bilingual**: Precompiled regex rules in English & Vietnamese.https://github.com/JutsuKKaisen/PAC-CS_Email_Classifier/blob/master/ReadMe.md
 - **O(n)** complexity: In-memory processing only.  
   No network calls. No ML dependencies.
 - **Two CLI modes**:  
@@ -63,42 +63,78 @@ Menu:
 
 ----------
 
-## 📄 Input/Output Example (from repository data)
+## 📄 Input/Output Example
 
 ### Input (`tests/thread.json`)
 
 ```json
 {
-  "thread": {
-    "subject": "Project Ghost",
-    "messages": [
-      {
-        "timestamp": "1999-12-15 07:08:00.000",
-        "from": "Sara Shackleton",
-        "to": ["Marie Heard"],
-        "body": "This is scheduled to close on Friday (don't know what time). ..."
-      },
-      {
-        "timestamp": "1999-12-15 07:14:00.000",
-        "from": "Sara Shackleton",
-        "to": ["Rod Nelson"],
-        "body": "Are you OK with this deal?  I may have a few questions. ..."
-      },
-      {
-        "timestamp": "1999-12-15 09:04:00.000",
-        "from": "Sara Shackleton",
-        "to": ["Morris Richard Clark", "Stephen H Douglas", "Rhett Jackson"],
-        "body": "I don't know who's working on this deal, so I'm forwarding docs to you all ..."
-      },
-      {
-        "timestamp": "1999-12-15 10:22:00.000",
-        "from": "Sara Shackleton",
-        "to": ["Brenda L Funk", "Craig Clark", "Gareth Bahlmann"],
-        "body": "Please confirm the Enron Corp. account for the swap: Citibank ..."
-      }
-    ]
+    "thread": {
+      "subject": "Project Ghost",
+      "messages": [
+        {
+          "timestamp": "1999-12-15 07:08:00.000",
+          "from": "Sara Shackleton",
+          "to": [
+            "Marie Heard"
+          ],
+          "body": "This is scheduled to close on Friday (don't know what time).  It's Gareth's \ndeal.  Enron Corp. is swap CP with a trust.  Don't know who is signing for \nEnron Corp.  Please C me to discuss and raise logistical issues.  Thanx.  SS\n---------------------- Forwarded by Sara Shackleton/HOU/ECT on 12/15/99 03:06 \nPM ---------------------------\n\n\n\"DALLAS GUEST ACCOUNT #2\" <DGUEST2@andrews-kurth.com> on 12/15/99 11:43:51 AM\nTo: Catherine Clark/HOU/ECT@ECT, Carol St Clair/HOU/ECT@ECT, Donald W \nHerrick/HOU/ECT@ECT, Gareth Bahlmann/HOU/ECT@ECT, Alicia \nGoodrow/Corp/Enron@ENRON, Sara Shackleton/HOU/ECT@ECT, \nVbuckley@lockeliddell.com, mniebruegge@mayerbrown.com, pbrito@mayerbrown.com, \neawilburn@prickett.com, Tamullen@prickett.com, Facciolo@rlf.com, \nKenton@rlf.com, clint.carlin@us.arthurandersen.com, schottla@us.cibc.com, \nwolfmark@us.cibc.com, Jlawler@wilmingtontrust.com\ncc: \"DAVID BARBOUR\" <BARBD@andrews-kurth.com>, \"DALLAS GUEST ACCOUNT #2\" \n<DGUEST2@andrews-kurth.com>, \"DAVID GROVE\" <GROVD@andrews-kurth.com>, \n\"DEBORAH LOWE\" <LOWED@andrews-kurth.com>, \"SCOTT OLSON\" \n<OLSOS@andrews-kurth.com>, \"TOM POPPLEWELL\" <POPPT@andrews-kurth.com>, \n\"MARTHA WELMAKER\" <WELMM@andrews-kurth.com> \nSubject: Project Ghost\n\n\n\nAttached in Word are blacklines of the following documents marked to show \nchanges from the previous version distributed:\n\n1.    Facility Agreement;\n2.    Trust Agreement;\n3.    Swap Schedule;\n4.    Swap Confirmation;\n5.    G-Present LLC Agreement;\n6.    G-Past LLC Agreement;\n7.    G-Future LLC Agreement;\n8.    Put Option Agreement;\n9.    Put Option Assignment; and\n10.  Notice of Assignment.\n\nPlease call me with any questions or comments.   Please note that I will be \nin our Houston office on Thursday and Friday.  You may reach me in Houston at \n(713) 220-4200; (713) 220-4285 (fax).\n\nDanny Sullivan\nAndrews & Kurth L.L.P.\n(214) 659-4409 (Dallas Phone)\n(214) 659-4401 (Dallas Fax)\n\n\n - 221589.doc\n - 221586.doc\n - 221581.doc\n - 221592.doc\n - 221606.doc\n - 221602.doc\n - 221603.doc\n - 221604.doc\n - 221605.doc\n - 221599.doc\n"
+        },
+        {
+          "timestamp": "1999-12-15 07:14:00.000",
+          "from": "Sara Shackleton",
+          "to": [
+            "Rod Nelson"
+          ],
+          "body": "Are you OK with this deal?  I may have a few questions.  SS\n---------------------- Forwarded by Sara Shackleton/HOU/ECT on 12/15/99 03:14 \nPM ---------------------------\n\n\n\"DALLAS GUEST ACCOUNT #2\" <DGUEST2@andrews-kurth.com> on 12/15/99 11:43:06 AM\nTo: Catherine Clark/HOU/ECT@ECT, Carol St Clair/HOU/ECT@ECT, Donald W \nHerrick/HOU/ECT@ECT, Gareth Bahlmann/HOU/ECT@ECT, Alicia \nGoodrow/Corp/Enron@ENRON, Sara Shackleton/HOU/ECT@ECT, \nVbuckley@lockeliddell.com, mniebruegge@mayerbrown.com, pbrito@mayerbrown.com, \neawilburn@prickett.com, Tamullen@prickett.com, Facciolo@rlf.com, \nKenton@rlf.com, clint.carlin@us.arthurandersen.com, schottla@us.cibc.com, \nwolfmark@us.cibc.com, Jlawler@wilmingtontrust.com\ncc: \"DAVID BARBOUR\" <BARBD@andrews-kurth.com>, \"DALLAS GUEST ACCOUNT #2\" \n<DGUEST2@andrews-kurth.com>, \"DAVID GROVE\" <GROVD@andrews-kurth.com>, \n\"DEBORAH LOWE\" <LOWED@andrews-kurth.com>, \"SCOTT OLSON\" \n<OLSOS@andrews-kurth.com>, \"TOM POPPLEWELL\" <POPPT@andrews-kurth.com>, \n\"MARTHA WELMAKER\" <WELMM@andrews-kurth.com> \nSubject: Project Ghost\n\n\n\nAttached in WordPerfect are blacklines of the following documents marked to \nshow changes from the previous version distributed:\n\n1.    Facility Agreement;\n2.    Trust Agreement;\n3.    Swap Schedule;\n4.    Swap Confirmation;\n5.    G-Present LLC Agreement;\n6.    G-Past LLC Agreement;\n7.    G-Future LLC Agreement;\n8.    Put Option Agreement;\n9.    Put Option Assignment; and\n10.  Notice of Assignment.\n\nPlease call me with any questions or comments.   Please note that I will be \nin our Houston office on Thursday and Friday.  You may reach me in Houston at \n(713) 220-4200; (713) 220-4285 (fax).\n\nDanny Sullivan\nAndrews & Kurth L.L.P.\n(214) 659-4409 (Dallas Phone)\n(214) 659-4401 (Dallas Fax)\n\n\n - 221589.wpd\n - 221586.wpd\n - 221581.wpd\n - 221592.wpd\n - 221606.wpd\n - 221602.wpd\n - 221603.wpd\n - 221604.wpd\n - 221605.wpd\n - 221599.wpd\n"
+        },
+        {
+          "timestamp": "1999-12-15 09:04:00.000",
+          "from": "Sara Shackleton",
+          "to": [
+            "Morris Richard Clark",
+            "Stephen H Douglas",
+            "Rhett Jackson"
+          ],
+          "body": "I don't know who's working on this deal, so I'm forwarding docs to you all.  \nTax reps look ok to me.  [see Total Return Swap Confirmation - Sec. 3.2; \nSchedule - Part 5(l) and requirement that swap counterparty which is Enron \nCorp. deliver IRS 'Forms 1001 or 4224].  Please leave me voice mail or \nemail.  Thanks.  Sara\n\nps.  this closes Friday morning\n---------------------- Forwarded by Sara Shackleton/HOU/ECT on 12/15/99 04:56 \nPM ---------------------------\n\n\n\"DALLAS GUEST ACCOUNT #2\" <DGUEST2@andrews-kurth.com> on 12/15/99 11:43:51 AM\nTo: Catherine Clark/HOU/ECT@ECT, Carol St Clair/HOU/ECT@ECT, Donald W \nHerrick/HOU/ECT@ECT, Gareth Bahlmann/HOU/ECT@ECT, Alicia \nGoodrow/Corp/Enron@ENRON, Sara Shackleton/HOU/ECT@ECT, \nVbuckley@lockeliddell.com, mniebruegge@mayerbrown.com, pbrito@mayerbrown.com, \neawilburn@prickett.com, Tamullen@prickett.com, Facciolo@rlf.com, \nKenton@rlf.com, clint.carlin@us.arthurandersen.com, schottla@us.cibc.com, \nwolfmark@us.cibc.com, Jlawler@wilmingtontrust.com\ncc: \"DAVID BARBOUR\" <BARBD@andrews-kurth.com>, \"DALLAS GUEST ACCOUNT #2\" \n<DGUEST2@andrews-kurth.com>, \"DAVID GROVE\" <GROVD@andrews-kurth.com>, \n\"DEBORAH LOWE\" <LOWED@andrews-kurth.com>, \"SCOTT OLSON\" \n<OLSOS@andrews-kurth.com>, \"TOM POPPLEWELL\" <POPPT@andrews-kurth.com>, \n\"MARTHA WELMAKER\" <WELMM@andrews-kurth.com> \nSubject: Project Ghost\n\n\n\nAttached in Word are blacklines of the following documents marked to show \nchanges from the previous version distributed:\n\n1.    Facility Agreement;\n2.    Trust Agreement;\n3.    Swap Schedule;\n4.    Swap Confirmation;\n5.    G-Present LLC Agreement;\n6.    G-Past LLC Agreement;\n7.    G-Future LLC Agreement;\n8.    Put Option Agreement;\n9.    Put Option Assignment; and\n10.  Notice of Assignment.\n\nPlease call me with any questions or comments.   Please note that I will be \nin our Houston office on Thursday and Friday.  You may reach me in Houston at \n(713) 220-4200; (713) 220-4285 (fax).\n\nDanny Sullivan\nAndrews & Kurth L.L.P.\n(214) 659-4409 (Dallas Phone)\n(214) 659-4401 (Dallas Fax)\n\n\n - 221589.doc\n - 221586.doc\n - 221581.doc\n - 221592.doc\n - 221606.doc\n - 221602.doc\n - 221603.doc\n - 221604.doc\n - 221605.doc\n - 221599.doc\n"
+        },
+        {
+          "timestamp": "1999-12-15 10:22:00.000",
+          "from": "Sara Shackleton",
+          "to": [
+            "Brenda L Funk",
+            "Craig Clark",
+            "Gareth Bahlmann"
+          ],
+          "body": "Please confirm the Enron Corp. account for the swap:  \n\nCitibank\nABA #021000089\nA/C = 0076486"
+        },
+        {
+          "timestamp": "1999-12-17 00:48:00.000",
+          "from": "Sara Shackleton",
+          "to": [
+            "Robin Decker"
+          ],
+          "body": "---------------------- Forwarded by Sara Shackleton/HOU/ECT on 12/17/99 08:47 \nAM ---------------------------\n\n\n\"GUEST3\" <GUEST3@andrews-kurth.com> on 12/17/99 02:15:47 AM\nTo: chuck.randall@abnamro.com, kris.grosshans@abnamro.com, \nGROVD@andrews-kurth.com, POPPT@andrews-kurth.com, Craig Clark/HOU/ECT@ECT, \nCatherine Clark/HOU/ECT@ECT, Carol St Clair/HOU/ECT@ECT, Donald W \nHerrick/HOU/ECT@ECT, Gareth Bahlmann/HOU/ECT@ECT, Alicia \nGoodrow/Corp/Enron@ENRON, Sara Shackleton/HOU/ECT@ECT, paul.riddle@funb.com, \nRussell.clingman@funb.com, poneil@kslaw.com, Vbuckley@lockeliddell.com, \nmniebruegge@mayerbrown.com, pbrito@mayerbrown.com, Fcampiglia@nabny.com, \njohn_roberts@paribas.com, Shaun_pacious@paribas.com, eawilburn@prickett.com, \nTamullen@prickett.com, Facciolo@rlf.com, Kenton@rlf.com, \nclint.carlin@us.arthurandersen.com, schottla@us.cibc.com, \nwolfmark@us.cibc.com, Jlawler@wilmingtontrust.com, bpace@winstead.com\ncc: \"DAVID BARBOUR\" <BARBD@andrews-kurth.com>, \"DALLAS GUEST ACCOUNT #2\" \n<DGUEST2@andrews-kurth.com> \nSubject: Project Ghost\n\n\n\nAttached in Word are blacklines of the following documents marked to show \nchanges from the previous versions distributed:\n\n1.  Trust Agreement;\n2.  Facility Agreement;\n3.  G-Past LLC Agreement;\n4.  G-Present LLC Agreement;\n5.  G-Future LLC Agreement;\n6.  Swap Confirmation;\n7.  Swap Schedule; and\n8.  Put Option Agreement.\n\nI also attach the form of Reimbursement and Disclosure Agreement, since \npeople have been saying it was not received in previous distributions.\n\nDanny Sullivan\nAndrews & Kurth L.L.P.\n(713) 220-4242\n\n - 216438.doc\n - 216444.doc\n - 216480.doc\n - 216537.doc\n - 216551.doc\n - 220082.doc\n - 220295.doc\n - 220207.doc\n - 221283.doc\n"
+        },
+        {
+          "timestamp": "1999-12-17 00:49:00.000",
+          "from": "Sara Shackleton",
+          "to": [
+            "Robin Decker"
+          ],
+          "body": "---------------------- Forwarded by Sara Shackleton/HOU/ECT on 12/17/99 08:48 \nAM ---------------------------\n\n\n\"GUEST3\" <GUEST3@andrews-kurth.com> on 12/17/99 02:17:14 AM\nTo: chuck.randall@abnamro.com, kris.grosshans@abnamro.com, \"DAVID GROVE\" \n<GROVD@andrews-kurth.com>, \"TOM POPPLEWELL\" <POPPT@andrews-kurth.com>, Craig \nClark/HOU/ECT@ECT, Catherine Clark/HOU/ECT@ECT, Carol St Clair/HOU/ECT@ECT, \nDonald W Herrick/HOU/ECT@ECT, Gareth Bahlmann/HOU/ECT@ECT, Alicia \nGoodrow/Corp/Enron@ENRON, Sara Shackleton/HOU/ECT@ECT, paul.riddle@funb.com, \nRussell.clingman@funb.com, poneil@kslaw.com, Vbuckley@lockeliddell.com, \nmniebruegge@mayerbrown.com, pbrito@mayerbrown.com, Fcampiglia@nabny.com, \njohn_roberts@paribas.com, Shaun_pacious@paribas.com, eawilburn@prickett.com, \nTamullen@prickett.com, Facciolo@rlf.com, Kenton@rlf.com, \nclint.carlin@us.arthurandersen.com, schottla@us.cibc.com, \nwolfmark@us.cibc.com, Jlawler@wilmingtontrust.com, bpace@winstead.com\ncc: \"DAVID BARBOUR\" <BARBD@andrews-kurth.com>, \"DALLAS GUEST ACCOUNT #2\" \n<DGUEST2@andrews-kurth.com> \nSubject: Project Ghost\n\n\n\nAttached in WordPerfect are blacklines of the following documents marked to \nshow changes from the previous versions distributed:\n\n1.  Trust Agreement;\n2.  Facility Agreement;\n3.  G-Past LLC Agreement;\n4.  G-Present LLC Agreement;\n5.  G-Future LLC Agreement;\n6.  Swap Confirmation;\n7.  Swap Schedule; and\n8.  Put Option Agreement.\n\nI also attach the form of Reimbursement and Disclosure Agreement, since \npeople have been saying it was not received in previous distributions.\n\nDanny Sullivan\nAndrews & Kurth L.L.P.\n(713) 220-4242\n\n - 216438.wpd\n - 216444.wpd\n - 216480.wpd\n - 216537.wpd\n - 216551.wpd\n - 220082.wpd\n - 220207.wpd\n - 220295.wpd\n - 221283.wpd\n"
+        },
+        {
+          "timestamp": "1999-12-20 00:48:00.000",
+          "from": "Sara Shackleton",
+          "to": [
+            "Kaye Ellis"
+          ],
+          "body": "Please print asap.  Thanks.  ss\n---------------------- Forwarded by Sara Shackleton/HOU/ECT on 12/20/99 08:48 \nAM ---------------------------\n\n\n\"CHRIS MOORE\" <MOORCH@andrews-kurth.com> on 12/19/99 04:31:12 PM\nTo: kris.grosshans@abnamro.com, \"DAVID GROVE\" <GROVD@andrews-kurth.com>, \"TOM \nPOPPLEWELL\" <POPPT@andrews-kurth.com>, Craig Clark/HOU/ECT@ECT, Catherine \nClark/HOU/ECT@ECT, Carol St Clair/HOU/ECT@ECT, Donald W Herrick/HOU/ECT@ECT, \nGareth Bahlmann/HOU/ECT@ECT, Alicia Goodrow/Corp/Enron@ENRON, Alan \nQuaintance/Corp/Enron@ENRON, Clement Abrams/Corp/Enron@ENRON, Ryan H \nSiurek/Corp/Enron@Enron, Sara Shackleton/HOU/ECT@ECT, paul.riddle@funb.com, \nRussell.clingman@funb.com, poneil@kslaw.com, Vbuckley@lockeliddell.com, \nmniebruegge@mayerbrown.com, pbrito@mayerbrown.com, tellwood@mayerbrown.com, \nFcampiglia@nabny.com, john_roberts@paribas.com, Shaun_pacious@paribas.com, \neawilburn@prickett.com, Tamullen@prickett.com, Facciolo@rlf.com, \nKenton@rlf.com, clint.carlin@us.arthurandersen.com, schottla@us.cibc.com, \nwolfmark@us.cibc.com, Jlawler@wilmingtontrust.com, bpace@winstead.com, \nrmourglia@winstead.com\ncc: \"DAVID BARBOUR\" <BARBD@andrews-kurth.com>, \"DALLAS GUEST ACCOUNT #2\" \n<DGUEST2@andrews-kurth.com> \nSubject: Project Ghost\n\n\n\nAttached are revised drafts of the following documents with changes marked \nagainst the version most recently circulated:\n\n1. Limited Liability Company Agreement of G-Past, L.L.C.\n (blackline216537.wpd or .doc)\n2. Limited Liability Company Agreement of G-Present, L.L.C.\n (blackline216551.wpd or .doc)\n3. Limited Liability Company Agreement of G-Future, L.L.C.\n (blackline220082.wpd or .doc)\n4. Term Facility Agreement (blacklined216438.wpd or .doc)\n5. Stock Power (blackline220293.wpd or .doc)\n6. Put Option Agreement (blackline220295.wpd or .doc)\n7. Trust Agreement (blackline220207.wpd or .doc)\n8. Total Return Swap Confirmation (blackline216480.wpd or .doc)\n9. Schedule to the ISDA Master Agreement\n (blackline216444.wpd or .doc)\n\nI have asked ABN AMRO's counsel, Peggy O'Neil, to call me to talk through \nsome of her comments received over the weekend.  With the exception of that \ncall, could I ask the banks and their counsel to give any further comments to \nTim Ellwood at Mayer Brown and Platt, so that Mayer Brown, as Agent's \ncounsel, can coordinate any further revisions.\n\nDanny Sullivan\n(214) 659-4409\n\n\n - blacklined216537.doc\n - blackline216444.doc\n - blackline216444.wpd\n - blackline216480.doc\n - blackline216480.WPD\n - blackline216537.WPD\n - blackline216551.doc\n - blackline216551.WPD\n - blackline220082.doc\n - blackline220082.wpd\n - blackline220207.doc\n - blackline220207.WPD\n - blackline220293.doc\n - blackline220293.WPD\n - blackline220295.doc\n - blackline220295.WPD\n - blacklined216438.doc\n - blackline216438.WPD\n"
+        }
+      ]
+    }
   }
-}
 
 ```
 
@@ -118,12 +154,11 @@ Menu:
     "tone": "POSITIVE"
   }
 }
-
 ```
 
 ----------
 
-## 🧠 How It Works (Flow Diagram)
+## 🧠 How It Works
 
 ```
 +---------------------+         +-------------------------+         +-------------------+
@@ -164,8 +199,8 @@ Menu:
     -   **Tone**: last message takes priority; fallback = last 3 messages.
         
     -   **Thread state**: `RESOLVED`, `FOLLOW-UP`, or `NEW`.
-        
 
+        For details on the rule logic, see [`email_classifier/rules.py`](email_classifier/rules.py).
 ----------
 
 ## 🏷️ Label Schemes
