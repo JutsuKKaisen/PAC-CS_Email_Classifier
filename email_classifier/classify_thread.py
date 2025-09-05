@@ -147,7 +147,7 @@ def interactive_cli():
 # ---------------- Entry point ----------------
 if __name__ == "__main__":
     # Nếu có tham số (>=1 sau tên script) → chạy CLI có argparse
-    # Nếu không có tham số → chạy interactive, không đòi --in
+    # Nếu không có tham số → chạy interactive, không yêu cầu --in
     if len(sys.argv) > 1:
         # Bỏ phần tên script, chỉ truyền danh sách arg cho parser
         main_cli(sys.argv[1:])
